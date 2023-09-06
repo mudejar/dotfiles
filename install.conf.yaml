@@ -1,9 +1,21 @@
 - clean: ['~']
 
-- link:
-    ~/.Xresources: Xresources
-    ~/.config/i3:
-        path: config/i3/
-        create: true
+- defaults:
+    link:
+      relink: true
 
+- link:
+    ~/.Xresources: 
+      if: '[ `uname` = Linux ]'
+      path: Xresources
+    ~/.config/i3:
+      if: '[ `uname` = Linux ]'
+      path: config/i3/
+      create: true
+    ~/.config/nvim:
+      path: config/nvim/
+      create: true
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
 
