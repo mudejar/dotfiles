@@ -15,6 +15,9 @@
     ~/.config/nvim:
       path: config/nvim/
       create: true
+    ~/.config/nvim/lua/custom:
+      path: NvChadConfig
+      create: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
