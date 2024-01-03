@@ -16,6 +16,7 @@
       path: config/nvim/
       create: true
     ~/.config/nvim/lua/custom:
+      if: '[ `uname` = Linux ]'
       path: NvChadConfig
       create: true
 
