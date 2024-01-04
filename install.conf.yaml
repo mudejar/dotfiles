@@ -21,5 +21,4 @@
       create: true
 
 - shell:
-    # - [git submodule update --init --recursive, Installing submodules] # This is temporarily commented to test if the code below isn't problematic
-    - [git submodule update --remote --recursive --merge, Updating submodules]
+    - [git submodule update --init --recursive, Installing submodules]
