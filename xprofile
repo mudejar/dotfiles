@@ -1,0 +1,11 @@
+# Set the opacity of 
+xcompmgr -c -o.5 &
+
+# Set the previously used profile for background and themes
+wal -i "$(< "${HOME}/.cache/wal/wal")"
+
+# Run the lxpolkit agent
+lxqt-policykit-agent &
+
+# Turn on screensaver
+xscreensaver &
