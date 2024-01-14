@@ -7,10 +7,13 @@
 - link:
     ~/.Xresources: 
       if: '[ `uname` = Linux ]'
-      path: Xresources
+      path: linux/Xresources
     ~/.xprofile:
       if: '[ `uname` = Linux ]'
-      path: xprofile
+      path: linux/xprofile
+    ~/.bashrc:
+      if: '[ `uname` = Linux ]'
+      path: linux/bashrc
     ~/.config/i3:
       if: '[ `uname` = Linux ]'
       path: config/i3/

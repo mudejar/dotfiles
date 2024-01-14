@@ -1,0 +1,35 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+PS1='[\u@\h \W]\$ '
+
+# Display Arch logo along with system information
+neofetch
+
+# Add gopath bin to PATH
+export PATH="$PATH:$HOME/go/bin"
+
+# Add AUR bin to PATH
+export PATH="$PATH:$HOME/.local/bin"
+
+# Add Arabic to the keyboard layout options
+# setxkbmap -layout us,ara
+
+# Function for killing running Discord process
+kill_discord() {
+  ps aux | grep -E '/opt/discord/Discord$' | awk '{print $2}' | xargs kill -9
+}
+
+wal -e -q -i "$(< "${HOME}/.cache/wal/wal")"
