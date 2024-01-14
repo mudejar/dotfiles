@@ -32,4 +32,5 @@ kill_discord() {
   ps aux | grep -E '/opt/discord/Discord$' | awk '{print $2}' | xargs kill -9
 }
 
+# Set terminal colors to match wallpaper
 wal -e -q -i "$(< "${HOME}/.cache/wal/wal")"

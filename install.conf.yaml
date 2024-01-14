@@ -25,6 +25,9 @@
       if: '[ `uname` = Linux ]'
       path: NvChadConfig
       create: true
+    ~/.config/terminator:
+      path: config/terminator/
+      create: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
