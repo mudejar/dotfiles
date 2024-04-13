@@ -21,10 +21,6 @@
     ~/.config/nvim:
       path: config/nvim/
       create: true
-    ~/.config/nvim/lua/custom:
-      if: '[ `uname` = Linux ]'
-      path: NvChadConfig
-      create: true
     ~/.config/terminator:
       path: config/terminator/
       create: true
