@@ -22,7 +22,8 @@ return {
   		ensure_installed = {
   			"lua-language-server", "stylua",
   			"html-lsp", "css-lsp" , "prettier",
-        "gopls", "pyright", "vim-language-server"
+        "gopls", "pyright", "vim-language-server",
+        "bash-language-server"
   		},
   	},
   },
