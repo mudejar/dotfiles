@@ -2,9 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "config/nvim"]
-	path = config/nvim
-	url = git@github.com:NvChad/NvChad.git
 [submodule "NvChadConfig"]
 	path = NvChadConfig
 	url = git@github.com:mudejar/NvChadConfig.git
