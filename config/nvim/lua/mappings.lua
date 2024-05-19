@@ -16,4 +16,8 @@ map("n", "<C-v>", "<C-W>v", { desc = "Split the current window vertically, new w
 -- Keybinds to make common tasks easier to call
 map("n", "<C-g>", "1<C-G>", { desc = "Show the full filepath of the file currently opened" })
 
+-- Keybinds related to diffview plugin
+map("n", "<leader>do", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview window" })
+map("n", "<leader>dc", "<cmd>DiffviewClose<CR>", { desc = "Close diffview window" })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

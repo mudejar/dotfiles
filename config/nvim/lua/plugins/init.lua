@@ -37,23 +37,5 @@ return {
        "bash", "typescript", "json"
   		},
   	},
-  },
-
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  },
-
-  {
-    "sindrets/diffview.nvim",
-    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewRefresh", "DiffviewToggleFiles", "DiffviewFocusFiles" },
-    opts = function()
-      return require "configs.diffview"
-    end,
-    config = function(_, opts)
-      require("diffview").setup(opts)
-    end,
-  },
+  }
 }
