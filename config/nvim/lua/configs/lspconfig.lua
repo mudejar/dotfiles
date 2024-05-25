@@ -4,7 +4,8 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "pyright", "vimls", "bashls", "tsserver", "jsonls" }
+local servers = { "html", "cssls", "vimls", "bashls", "tsserver", "jsonls" }
+local python_servers = { "pyright", "ruff_lsp" }
 local util = require "lspconfig/util"
 
 -- lsps with default config
@@ -13,6 +14,16 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
+  }
+end
+
+-- Python
+for _, lsp in ipairs(python_servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+    filetypes = "python",
   }
 end
 
