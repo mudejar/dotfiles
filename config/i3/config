@@ -62,7 +62,7 @@ bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 bindsym $mod+Shift+f exec firefox
 
 # start Discord
-bindsym $mod+Shift+d exec discord
+bindsym $mod+Shift+d exec vesktop 
 
 # start Thunderbird
 bindsym $mod+Shift+t exec thunderbird
