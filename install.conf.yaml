@@ -6,16 +6,16 @@
 
 - link:
     ~/.Xresources: 
-      if: '[ `uname` = Linux ]'
+      if: '[ `uname` = Linux ] && [ `uname -n` != pop-os ]' 
       path: linux/Xresources
     ~/.xprofile:
-      if: '[ `uname` = Linux ]'
+      if: '[ `uname` = Linux ] && [ `uname -n` != pop-os ]' 
       path: linux/xprofile
     ~/.bashrc:
-      if: '[ `uname` = Linux ]'
+      if: '[ `uname` = Linux ] && [ `uname -n` != pop-os ]' 
       path: linux/bashrc
     ~/.config/i3:
-      if: '[ `uname` = Linux ]'
+      if: '[ `uname` = Linux ] && [ `uname -n` != pop-os ]' 
       path: config/i3/
       create: true
     ~/.config/nvim:
