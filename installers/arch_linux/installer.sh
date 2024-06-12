@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "Downloading and installing yay package manager for AUR packages..."
-pacman -Sy --needed git base-devel
-cd yay
-makepkg -si
+# Check if yay is installed
+if! command -v yay &> /dev/null; then
+    echo "yay could not be found. Please install yay."
+    exit 1
+fi
 
 echo "Downloading and installing packages listed in packages.txt file..."
 yay -S --needed - < packages.txt 
