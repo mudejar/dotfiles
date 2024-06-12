@@ -6,16 +6,19 @@
 
 - link:
     ~/.Xresources: 
-      if: '[ `uname` = Linux ] && [ `uname -n` != pop-os ]' 
+      if: '[ `uname` = Linux ]' 
       path: linux/Xresources
     ~/.xprofile:
-      if: '[ `uname` = Linux ] && [ `uname -n` != pop-os ]' 
+      if: '[ `uname` = Linux ]' 
       path: linux/xprofile
     ~/.bashrc:
-      if: '[ `uname` = Linux ] && [ `uname -n` != pop-os ]' 
+      if: '[ `uname` = Linux ]' 
       path: linux/bashrc
+    ~/.zsh_aliases:
+      if: '[ `uname` = Linux ]'
+      path: linux/zsh_aliases
     ~/.config/i3:
-      if: '[ `uname` = Linux ] && [ `uname -n` != pop-os ]' 
+      if: '[ `uname` = Linux ]' 
       path: config/i3/
       create: true
     ~/.config/nvim:
