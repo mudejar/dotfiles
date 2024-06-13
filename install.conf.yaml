@@ -6,20 +6,20 @@
 
 - link:
     ~/.Xresources: 
-      if: '[ `uname` = Linux ]' 
-      path: linux/Xresources
+      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
+      path: linux/monad/Xresources
     ~/.xprofile:
-      if: '[ `uname` = Linux ]' 
-      path: linux/xprofile
+      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
+      path: linux/monad/xprofile
     ~/.bashrc:
-      if: '[ `uname` = Linux ]' 
-      path: linux/bashrc
+      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
+      path: linux/monad/bashrc
     ~/.zsh_aliases:
-      if: '[ `uname` = Linux ]'
-      path: linux/zsh_aliases
+      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
+      path: linux/monad/zsh_aliases
     ~/.config/i3:
-      if: '[ `uname` = Linux ]' 
-      path: config/i3/
+      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
+      path: linux/monad/i3/
       create: true
     ~/.config/nvim:
       path: config/nvim/
