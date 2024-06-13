@@ -40,9 +40,6 @@ alias listPackages='pacman -Q'
 # VIA alias for workaround
 alias via='via --no-sandbox'
 
-# Open a file quickly with Intellij lite
-alias idea='sudo /usr/bin/intellij-idea-ultimate-edition -e '
-
 # Find a file by name in the filesystem
 alias findFile="sudo find / -name"
 
@@ -59,6 +56,9 @@ alias java-11='sudo archlinux-java set java-11-openjdk'
 
 # Shorthand alias for starting vscodium
 alias code='codium'
+
+# Calls tgpt in interactive mode
+alias ai='tgpt -i'
 
 # Function for killing running vesktop process
 kill_vesktop() {
