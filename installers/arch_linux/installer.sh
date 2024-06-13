@@ -8,3 +8,16 @@ fi
 
 echo "Downloading and installing packages listed in packages.txt file..."
 yay -S --needed - < packages.txt 
+
+echo "Installing polybar themes..."
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+cd polybar-themes
+chmod +x setup.sh
+./setup.sh
+
+echo "Installing rofi themes..."
+cd $HOME
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
