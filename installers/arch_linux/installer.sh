@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 # Check if yay is installed
-if! command -v yay &> /dev/null; then
+if! [ command -v yay &> /dev/null ] then
     echo "yay could not be found. Please install yay."
     exit 1
 fi
