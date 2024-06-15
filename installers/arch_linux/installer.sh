@@ -1,8 +1,12 @@
 #!/usr/bin/zsh
 
-cd $HOME
+if [[ $EUID == 0 ]] then
+  echo "Do not run this script as root."
+  exit 1
+fi
 
 # Check if yay is installed
+cd $HOME
 if! [ command -v yay &> /dev/null ] then
   pacman -Sy --needed git base-devel
   git clone https://aur.archlinux.org/yay.git
