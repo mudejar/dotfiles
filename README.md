@@ -6,8 +6,9 @@ Dotfiles are configuration files that typically begin with a dot (.) and are use
 ## System requirements
 
 #### Dotbot
-These dotfiles are managed using [dotbot](https://github.com/anishathalye/dotbot). When editing the configuration file, make sure to keep the script idemptotent. In other words, running `./install` several times should not break the system.
+These dotfiles are managed using [dotbot](https://github.com/anishathalye/dotbot). When editing the configuration file, make sure to keep the script idemptotent. In other words, running `./install` several times should not break the system. The configuration 
 
 Make sure the following are installed in your system:
 - Python +3.8
 - git
+- zsh

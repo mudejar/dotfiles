@@ -23,7 +23,7 @@ for _, lsp in ipairs(python_servers) do
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
-    filetypes = "python",
+    filetypes = { "python" },
   }
 end
 
