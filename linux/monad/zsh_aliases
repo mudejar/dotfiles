@@ -62,5 +62,5 @@ alias ai='tgpt -i'
 
 # Function for killing running vesktop process
 kill_vesktop() {
-  ps aux | grep -E '/usr/lib/vesktop/vesktop$' | awk '{print $2}' | xargs kill -9
+  flatpak kill dev.vencord.Vesktop
 }

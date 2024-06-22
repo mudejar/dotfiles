@@ -67,7 +67,7 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+b exec brave
 
 # start Discord/vesktop
-bindsym $mod+Shift+d exec vesktop 
+bindsym $mod+Shift+d exec flatpak run dev.vencord.Vesktop 
 
 # start Thunderbird
 bindsym $mod+Shift+t exec thunderbird
