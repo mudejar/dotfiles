@@ -37,6 +37,8 @@
     ~/.config/terminator:
       path: config/terminator/
       create: true
+    ~/.gitconfig:
+      path: config/git/gitconfig
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

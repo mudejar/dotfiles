@@ -30,3 +30,8 @@ git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
 chmod +x setup.sh
 ./setup.sh
+
+echo "Cloning script for setting up fzf keybindings with git"
+cd $HOME
+git clone https://github.com/junegunn/fzf-git.sh.git
+
