@@ -72,6 +72,9 @@ bindsym $mod+Shift+d exec flatpak run dev.vencord.Vesktop
 # start Thunderbird
 bindsym $mod+Shift+t exec thunderbird
 
+# Start flameshot for screenshotting
+bindsym $mod+Shift+p exec flameshot gui
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down

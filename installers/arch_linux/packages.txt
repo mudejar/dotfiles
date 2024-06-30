@@ -8,6 +8,7 @@ cups
 dmenu
 dotbot
 fd
+flameshot
 feh
 firefox
 fzf

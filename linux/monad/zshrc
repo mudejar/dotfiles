@@ -1,0 +1,56 @@
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.zsh_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
+fi
+
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle :compinstall filename '$HOME/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+
+# Display Arch logo along with system information
+neofetch
+
+# Add gopath bin to PATH
+export PATH="$PATH:$HOME/go/bin"
+
+# Add AUR bin to PATH
+export PATH="$PATH:$HOME/.local/bin"
+
+# Change default editor used by sudoedit
+export EDITOR='nvim'
+
+# Add rofi scripts to PATH for launcher customization
+export PATH="$PATH:$HOME/.config/rofi/scripts"
+# Add Arabic to the keyboard layout options
+# setxkbmap -layout us,ara
+
+# Set terminal colors to match wallpaper
+wal -e -q -i "$(< "${HOME}/.cache/wal/wal")"
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+# -- Use fd instead of fzf --
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd for listing path candidates.
+# - The first agrument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1" 
+}

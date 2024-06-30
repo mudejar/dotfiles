@@ -14,6 +14,9 @@
     ~/.bashrc:
       if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
       path: linux/monad/bashrc
+    ~/.zshrc:
+      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
+      path: linux/monad/zshrc
     ~/.zsh_aliases:
       if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
       path: linux/monad/zsh_aliases
