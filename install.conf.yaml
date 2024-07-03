@@ -33,6 +33,8 @@
     ~/.config/terminator:
       path: config/terminator/
       create: true
+    ~/.git-prompt.sh:
+      path: config/git/git-prompt.sh
     ~/.gitconfig:
       path: config/git/gitconfig
 
