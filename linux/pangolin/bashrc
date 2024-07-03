@@ -15,7 +15,7 @@ fi
 
 PS1='[\u@\h \W]\$ '
 
-# Display Arch logo along with system information
+# Display Distribution logo along with system information
 neofetch
 
 # Add gopath bin to PATH

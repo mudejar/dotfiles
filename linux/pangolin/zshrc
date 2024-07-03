@@ -1,0 +1,92 @@
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.zsh_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
+fi
+
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle :compinstall filename '$HOME/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+
+# Display Arch logo along with system information
+neofetch
+
+# Add gopath bin to PATH
+export PATH="$PATH:$HOME/go/bin"
+
+# Add AUR bin to PATH
+export PATH="$PATH:$HOME/.local/bin"
+
+# Change default editor used by sudoedit
+export EDITOR='nvim'
+
+# Add rofi scripts to PATH for launcher customization
+export PATH="$PATH:$HOME/.config/rofi/scripts"
+
+# Set terminal colors to match wallpaper
+wal -e -q -i "$(< "${HOME}/.cache/wal/wal")"
+
+# Set up fzf key bindings and fuzzy completion
+# fzf keybindings you will use most will likely be the following:
+# ctrl+t
+# **
+# To learn more, please see fzf github page.
+eval "$(fzf --zsh)"
+
+# -- Use fd instead of fzf --
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd for listing path candidates.
+# - The first agrument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1" 
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+
+# Useful keybindings for utilizing fzf with git.
+# See: https://github.com/junegunn/fzf-git.sh
+source ~/fzf-git.sh/fzf-git.sh
+
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$' {}"   "$@" ;;
+    ssh)          fzf --preview 'dig {}'              "$@" ;;
+    *)            fzf --preview "--preview 'bat -n --color=always --line-range :500 {}'" "$@" ;;
+  esac
+}
+
+# ---- Bat (better cat) ----
+export BATH_THEME="gruvbox-dark"
+
+# ---- zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+alias cd="z"

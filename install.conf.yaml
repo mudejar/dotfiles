@@ -27,10 +27,6 @@
     ~/.zsh_aliases:
       if: '[ `uname` = Linux ] && [ `uname -n` = pangolin ]'
       path: linux/pangolin/zsh_aliases
-    ~/.config/i3:
-      if: '[ `uname` = Linux ] && [ `uname -n` = pangolin ]'
-      path: linux/pangolin/i3/
-      create: true
     ~/.config/nvim:
       path: config/nvim/
       create: true
