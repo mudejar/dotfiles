@@ -31,12 +31,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias vim='nvim'
 alias svim='sudoedit'
 
-# Reset wallpaper to what was used last by wal
-alias refreshWallpaper='wal -i "$(< "${HOME}/.cache/wal/wal")"'
-
-# Pacman aliases
-alias listPackages='pacman -Q'
-
 # VIA alias for workaround
 alias via='via --no-sandbox'
 
@@ -45,9 +39,6 @@ alias findFile="sudo find / -name"
 
 # Neofetch
 alias nf="neofetch"
-
-# Install a package
-alias install='sudo pacman -S'
 
 # Switching between Java versions
 alias java-17='sudo archlinux-java set java-17-openjdk'

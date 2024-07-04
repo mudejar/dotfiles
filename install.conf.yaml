@@ -17,26 +17,20 @@
     ~/.zshrc:
       if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
       path: linux/monad/zshrc
-    ~/.zsh_aliases:
-      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
-      path: linux/monad/zsh_aliases
     ~/.config/i3:
       if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
       path: linux/monad/i3/
       create: true
-    ~/.zsh_aliases:
-      if: '[ `uname` = Linux ] && [ `uname -n` = pangolin ]'
-      path: linux/pangolin/zsh_aliases
+    ~/.config/zsh:
+      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
+      path: linux/monad/zsh
+      create: true
     ~/.config/nvim:
       path: config/nvim/
       create: true
     ~/.config/terminator:
       path: config/terminator/
       create: true
-    ~/.git-prompt.sh:
-      path: config/git/git-prompt.sh
-    ~/.gitconfig:
-      path: config/git/gitconfig
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
