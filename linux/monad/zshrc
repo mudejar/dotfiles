@@ -98,6 +98,7 @@ setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
 # ---- Enable plugins that are found in the zsh folder ----
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-history-substring-search.zsh
+source ~/.config/zsh/you-should-use.plugin.zsh
 
 # History substring search options
 bindkey '^[[A' history-substring-search-up
