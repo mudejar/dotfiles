@@ -27,7 +27,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 
-# Display Arch logo along with system information
+# Uncomment this to display distribution logo along with system information
 neofetch
 
 # Add gopath bin to PATH
