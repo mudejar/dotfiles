@@ -28,7 +28,7 @@ SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 
 # Uncomment this to display distribution logo along with system information
-neofetch
+# neofetch
 
 # Add gopath bin to PATH
 export PATH="$PATH:$HOME/go/bin"
@@ -41,6 +41,9 @@ export EDITOR='nvim'
 
 # Add rofi scripts to PATH for launcher customization
 export PATH="$PATH:$HOME/.config/rofi/scripts"
+
+# Environment variable required to configure tgpt
+export AI_PROVIDER=phind
 
 # Set terminal colors to match wallpaper
 wal -e -q -i "$(< "${HOME}/.cache/wal/wal")"
