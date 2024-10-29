@@ -50,16 +50,3 @@ alias code='codium'
 
 # Calls tgpt in interactive mode
 alias ai='tgpt -i'
-
-# Mounts personal samsung phone
-alias mountSamsung='sudo mount $HOME/dev/samsung'
-alias unmountSamsung='sudo umount $HOME/dev/samsung'
-
-# Mount personal nas in nas folder
-alias mountNas='sudo mount mudejar.myqnapcloud.com:/Public $HOME/nas'
-alias unmountNas='sudo umount mudejar.myqnapcloud.com:/Public $HOME/nas'
-
-# Function for killing running vesktop process
-kill_vesktop() {
-  flatpak kill dev.vencord.Vesktop
-}
