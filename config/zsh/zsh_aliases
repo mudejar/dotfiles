@@ -32,3 +32,6 @@ alias code='codium'
 
 # Calls tgpt in interactive mode
 alias ai='tgpt -i'
+
+# Alias for using zoxide instead of cd
+alias cd='zoxide'
