@@ -40,6 +40,9 @@ export PATH="$PATH:$HOME/go/bin"
 # Change default editor used by sudoedit
 export EDITOR='nvim'
 
+# Use neovim whenever you open a man page
+export MANPAGER='nvim +Man!'
+
 # Set up fzf key bindings and fuzzy completion
 # fzf keybindings you will use most will likely be the following:
 # ctrl+t
