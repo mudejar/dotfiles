@@ -5,26 +5,6 @@
       relink: true
 
 - link:
-    ~/.Xresources: 
-      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
-      path: linux/monad/Xresources
-    ~/.xprofile:
-      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
-      path: linux/monad/xprofile
-    ~/.bashrc:
-      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
-      path: linux/monad/bashrc
-    ~/.zshrc:
-      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
-      path: linux/monad/zshrc
-    ~/.config/i3:
-      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
-      path: linux/monad/i3/
-      create: true
-    ~/.config/zsh:
-      if: '[ `uname` = Linux ] && [ `uname -n` = monad ]'
-      path: linux/monad/zsh
-      create: true
     ~/.config/nvim:
       path: config/nvim/
       create: true
@@ -36,6 +16,3 @@
       create: true
     ~/.zshrc:
       path: zshrc
-
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
