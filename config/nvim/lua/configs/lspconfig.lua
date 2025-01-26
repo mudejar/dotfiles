@@ -4,8 +4,8 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "vimls", "bashls", "tsserver", "jsonls", "jdtls" }
-local python_servers = { "pyright", "ruff_lsp" }
+local servers = { "html", "cssls", "vimls", "bashls", "jsonls", "jdtls" }
+local python_servers = { "pyright", "ruff" }
 local util = require "lspconfig/util"
 
 -- lsps with default config

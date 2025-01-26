@@ -28,7 +28,7 @@ return {
         "pyright",
         "black",
         "mypy",
-        "ruff-lsp",
+        "ruff",
         "vim-language-server",
         "bash-language-server",
       },

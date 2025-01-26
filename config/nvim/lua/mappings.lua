@@ -16,4 +16,14 @@ map("n", "<C-v>", "<C-W>v", { desc = "Window Split the current window vertically
 -- Keybinds to make common tasks easier to call
 map("n", "<C-g>", "1<C-G>", { desc = "File Show the full filepath of the file currently opened" })
 
+--- Tabufline
+local tabufline = require "nvchad.tabufline"
+
+map("n", "<Tab>", function()
+  tabufline.next()
+end, { desc = "Buffer go to next"})
+
+map("n", "<S-Tab>", function()
+  tabufline.prev()
+end, { desc = "Buffer go to prev"})
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
