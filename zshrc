@@ -99,8 +99,9 @@ alias cd="z"
 # ---- Enable plugins that are found in the zsh folder ----
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-history-substring-search.zsh
-source ~/.config/zsh/you-should-use.plugin.zsh
+# source ~/.config/zsh/you-should-use.plugin.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh/kube-ps1/kube-ps1.sh
 
 # History substring search options
 bindkey '^[[A' history-substring-search-up
