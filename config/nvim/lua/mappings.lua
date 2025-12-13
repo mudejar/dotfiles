@@ -16,6 +16,10 @@ map("n", "<C-v>", "<C-W>v", { desc = "Window Split the current window vertically
 -- Keybinds to make common tasks easier to call
 map("n", "<C-g>", "1<C-G>", { desc = "File Show the full filepath of the file currently opened" })
 
+-- IntelliJ-style navigation
+map("n", "<C-A-Left>", "<C-o>", { desc = "Navigate Jump back in jump list" })
+map("n", "<C-A-Right>", "<C-i>", { desc = "Navigate Jump forward in jump list" })
+
 --- Tabufline
 local tabufline = require "nvchad.tabufline"
 
