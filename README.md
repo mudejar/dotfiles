@@ -9,9 +9,6 @@ Ideally, I should be able to move into a new "clean" system, run an installer sc
 ### Config folder
 The config folder will always be copied into the `$HOME/.config` directory, regardless of the operating system you run dotbot in. This is a folder for configuration files that will remain the same in any Unix/Linux based environment.
 
-### Linux and MacOS folders
-These folders contain configuration files that are dependent on the operating system of the machine that the dotbot install command is being run on. Sometimes, packages will have different names or will simply not exist or work on different operating systems. Also, the package managers are different for different operating systems and distributions.
-
 ## System requirements
 
 #### Dotbot
