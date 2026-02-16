@@ -106,6 +106,8 @@ source ~/.config/zsh/kube-ps1/kube-ps1.sh
 # History substring search options
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
