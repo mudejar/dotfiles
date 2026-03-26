@@ -31,6 +31,10 @@ return {
         "ruff",
         "vim-language-server",
         "bash-language-server",
+        "jdtls",
+        "java-debug-adapter",
+        "java-test",
+        "google-java-format",
       },
     },
   },
@@ -40,7 +44,7 @@ return {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
        "html", "css", "go", "python",
-       "bash", "typescript", "json"
+       "bash", "typescript", "json", "java"
   		},
   	},
   }

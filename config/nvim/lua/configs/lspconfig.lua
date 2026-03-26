@@ -1,6 +1,6 @@
 -- Servers with default config (capabilities, on_init, on_attach are set
 -- globally by NvChad's defaults() via vim.lsp.config("*", ...))
-local servers = { "html", "cssls", "vimls", "bashls", "jsonls", "jdtls" }
+local servers = { "html", "cssls", "vimls", "bashls", "jsonls" }
 
 vim.lsp.enable(servers)
 
