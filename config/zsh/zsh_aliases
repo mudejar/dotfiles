@@ -46,11 +46,11 @@ _find_java_home() {
     # Linux: search common JDK install locations
     local candidate
     for candidate in \
-      /usr/lib/jvm/java-"$ver"-* \
-      /usr/lib/jvm/jdk-"$ver"* \
-      /usr/lib/jvm/java-"$ver"-openjdk* \
-      /usr/lib/jvm/temurin-"$ver"* \
-      /usr/lib/jvm/corretto-"$ver"*; do
+      /usr/lib/jvm/java-"$ver"-*(N) \
+      /usr/lib/jvm/jdk-"$ver"*(N) \
+      /usr/lib/jvm/java-"$ver"-openjdk*(N) \
+      /usr/lib/jvm/temurin-"$ver"*(N) \
+      /usr/lib/jvm/corretto-"$ver"*(N); do
       if [[ -d "$candidate" ]]; then
         echo "$candidate"
         return
