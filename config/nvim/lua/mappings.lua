@@ -30,4 +30,41 @@ end, { desc = "Buffer go to next"})
 map("n", "<S-Tab>", function()
   tabufline.prev()
 end, { desc = "Buffer go to prev"})
+-- Maven keymaps
+map("n", "<leader>mc", "<cmd>Maven compile<cr>", { desc = "Maven Compile" })
+map("n", "<leader>mC", "<cmd>Maven clean compile<cr>", { desc = "Maven Clean compile" })
+map("n", "<leader>mp", "<cmd>Maven clean package -Ddocker.skip=true<cr>", { desc = "Maven Package (no Docker)" })
+map("n", "<leader>mt", "<cmd>Maven test<cr>", { desc = "Maven Test all" })
+map("n", "<leader>mi", "<cmd>Maven clean install -DskipTests -Ddocker.skip=true -DskipITs=true -T 4<cr>", { desc = "Maven Install (skip tests)" })
+map("n", "<leader>ms", "<cmd>Maven spotless:apply<cr>", { desc = "Maven Spotless apply" })
+map("n", "<leader>mS", "<cmd>Maven spotless:check<cr>", { desc = "Maven Spotless check" })
+map("n", "<leader>md", "<cmd>Maven dependency:tree<cr>", { desc = "Maven Dependency tree" })
+map("n", "<leader>mg", "<cmd>Maven clean generate-sources<cr>", { desc = "Maven Generate sources (protobuf)" })
+map("n", "<leader>mm", "<cmd>Maven<cr>", { desc = "Maven Pick goal" })
+map("n", "<leader>mx", "<cmd>MavenExec<cr>", { desc = "Maven Execute custom command" })
+
+-- Maven test current file (runs test for the class matching current filename)
+map("n", "<leader>mT", function()
+  local filename = vim.fn.expand "%:t:r"
+  vim.cmd("Maven test -Dtest=" .. filename)
+end, { desc = "Maven Test current file" })
+
+-- Maven build current module (uses -pl with the module containing current file)
+map("n", "<leader>mb", function()
+  local filepath = vim.fn.expand "%:p"
+  local pom = vim.fs.find("pom.xml", { path = vim.fn.expand "%:p:h", upward = true, stop = vim.fn.getcwd() })[1]
+  if pom then
+    local module_dir = vim.fn.fnamemodify(pom, ":h")
+    local root = vim.fn.getcwd()
+    local relative = module_dir:sub(#root + 2)
+    if relative and relative ~= "" then
+      vim.cmd("Maven clean compile -am -pl " .. relative)
+    else
+      vim.cmd "Maven clean compile"
+    end
+  else
+    vim.cmd "Maven clean compile"
+  end
+end, { desc = "Maven Build current module" })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

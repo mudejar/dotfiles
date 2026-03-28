@@ -35,3 +35,40 @@ alias ai='tgpt -i'
 
 # Alias for using zoxide instead of cd
 alias cd='zoxide'
+
+# Java version management (cross-platform)
+_find_java_home() {
+  local ver="${1:-}"
+  if [[ -x /usr/libexec/java_home ]]; then
+    # macOS
+    /usr/libexec/java_home ${ver:+-v "$ver"} 2>/dev/null
+  elif [[ -n "$ver" ]]; then
+    # Linux: search common JDK install locations
+    local candidate
+    for candidate in \
+      /usr/lib/jvm/java-"$ver"-* \
+      /usr/lib/jvm/jdk-"$ver"* \
+      /usr/lib/jvm/java-"$ver"-openjdk* \
+      /usr/lib/jvm/temurin-"$ver"* \
+      /usr/lib/jvm/corretto-"$ver"*; do
+      if [[ -d "$candidate" ]]; then
+        echo "$candidate"
+        return
+      fi
+    done
+  fi
+}
+
+export JAVA_HOME=$(_find_java_home 21)
+
+jdk() {
+  local home
+  home=$(_find_java_home "$1")
+  if [[ -n "$home" ]]; then
+    export JAVA_HOME="$home"
+    java -version
+  else
+    echo "JDK $1 not found" >&2
+    return 1
+  fi
+}

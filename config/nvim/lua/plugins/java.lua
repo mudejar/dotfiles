@@ -43,8 +43,27 @@ return {
 
       -- Find JDK 21+ for running jdtls (required by jdtls 1.57+)
       local java_cmd = "java"
-      local jdk21_home = vim.fn.system("/usr/libexec/java_home -v 21 2>/dev/null"):gsub("\n", "")
-      if vim.fn.isdirectory(jdk21_home) == 1 then
+      local function find_jdk21()
+        -- macOS: use java_home utility
+        if vim.fn.executable "/usr/libexec/java_home" == 1 then
+          local home = vim.fn.system("/usr/libexec/java_home -v 21 2>/dev/null"):gsub("\n", "")
+          if vim.fn.isdirectory(home) == 1 then return home end
+        end
+        -- Linux: search common JDK install locations
+        for _, pattern in ipairs {
+          "/usr/lib/jvm/java-21-*",
+          "/usr/lib/jvm/jdk-21*",
+          "/usr/lib/jvm/java-21-openjdk*",
+          "/usr/lib/jvm/temurin-21*",
+          "/usr/lib/jvm/corretto-21*",
+        } do
+          local matches = vim.fn.glob(pattern, false, true)
+          if #matches > 0 then return matches[1] end
+        end
+        return nil
+      end
+      local jdk21_home = find_jdk21()
+      if jdk21_home then
         java_cmd = jdk21_home .. "/bin/java"
       end
 
