@@ -68,3 +68,9 @@ map("n", "<leader>mb", function()
 end, { desc = "Maven Build current module" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- Terminal pane navigation (e.g. from Claude Code pane)
+map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Terminal Move to left window" })
+map("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Terminal Move to right window" })
+map("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Terminal Move to lower window" })
+map("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Terminal Move to upper window" })
