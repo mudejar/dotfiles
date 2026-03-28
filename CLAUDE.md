@@ -43,3 +43,7 @@ The `relink: true` default means existing symlinks are overwritten on install.
 ## External Tool Dependencies
 
 The zshrc expects these tools to be installed on the system: `fzf`, `fd`, `bat`, `eza`, `zoxide`, `nvim`, `nvm`.
+
+## Claude Code Guidelines
+
+- Do not include "Generated with Claude Code" or "Co-Authored-By: Claude" lines in commit messages or merge request descriptions.
