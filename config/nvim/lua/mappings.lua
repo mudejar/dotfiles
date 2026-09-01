@@ -69,6 +69,42 @@ end, { desc = "Maven Build current module" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+-- Window resize (single-step)
+map("n", "<C-W><Left>", "<C-W><", { desc = "Window Decrease width" })
+map("n", "<C-W><Right>", "<C-W>>", { desc = "Window Increase width" })
+map("n", "<C-W><Up>", "<C-W>+", { desc = "Window Increase height" })
+map("n", "<C-W><Down>", "<C-W>-", { desc = "Window Decrease height" })
+
+-- Resize mode: stay in a loop reading arrow keys until Esc or q.
+local function enter_resize_mode()
+  local resize_keys = {
+    [vim.api.nvim_replace_termcodes("<Up>", true, false, true)] = "resize +1",
+    [vim.api.nvim_replace_termcodes("<Down>", true, false, true)] = "resize -1",
+    [vim.api.nvim_replace_termcodes("<Right>", true, false, true)] = "vertical resize +1",
+    [vim.api.nvim_replace_termcodes("<Left>", true, false, true)] = "vertical resize -1",
+    k = "resize +1",
+    j = "resize -1",
+    l = "vertical resize +1",
+    h = "vertical resize -1",
+  }
+  local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+  vim.api.nvim_echo({ { "-- RESIZE MODE -- (arrows/hjkl to resize, Esc or q to exit)", "ModeMsg" } }, false, {})
+  while true do
+    local char = vim.fn.getcharstr()
+    if char == esc or char == "q" then
+      break
+    end
+    local cmd = resize_keys[char]
+    if cmd then
+      vim.cmd(cmd)
+      vim.cmd "redraw"
+    end
+  end
+  vim.api.nvim_echo({}, false, {})
+end
+
+map("n", "<leader>wr", enter_resize_mode, { desc = "Window Enter resize mode" })
+
 -- Terminal pane navigation (e.g. from Claude Code pane)
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Terminal Exit terminal mode" })
 map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Terminal Move to left window" })

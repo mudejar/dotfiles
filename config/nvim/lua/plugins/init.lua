@@ -48,11 +48,16 @@ return {
   },
   {
   	"nvim-treesitter/nvim-treesitter",
+  	-- The main branch is the rewrite required for Neovim 0.11+/0.12.
+  	-- The legacy master branch does not support Neovim 0.12 and crashes
+  	-- the treesitter highlighter (attempt to call method 'range').
+  	branch = "main",
   	opts = {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
        "html", "css", "go", "python",
-       "bash", "typescript", "json", "java"
+       "bash", "typescript", "json", "java",
+       "markdown", "markdown_inline", "yaml"
   		},
   	},
   }
